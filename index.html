@@ -70,5 +70,13 @@
         s.parentNode.insertBefore(ga, s);
       })();
     </script>
+    <script>
+      // 2026年1月17日　FB投稿時URL後ろの長いパラメータでのエラー回避
+      // すでに demo.js で実行されている設定を「history: false」で上書きします
+      $("#gallery").photobox("a", {
+        history: false, // これが重要！URLの監視をやめさせます
+        zoomable: true,
+      });
+    </script>
   </body>
 </html>
