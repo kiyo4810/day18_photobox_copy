@@ -73,10 +73,18 @@
     <script>
       // 2026年1月17日　FB投稿時URL後ろの長いパラメータでのエラー回避
       // すでに demo.js で実行されている設定を「history: false」で上書きします
-      $("#gallery").photobox("a", {
-        history: false, // これが重要！URLの監視をやめさせます
-        zoomable: true,
-      });
+      $("#gallery").photobox(
+        "a",
+        {
+          zoomable: true,
+          history: false, // ← ここを追加！これでFacebookの変なURLを無視します
+        },
+        imageLoaded
+      );
+
+      function imageLoaded() {
+        console.log("image has been loaded...");
+      }
     </script>
   </body>
 </html>
