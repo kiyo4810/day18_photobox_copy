@@ -55,8 +55,7 @@
       </div>
       <ul id="gallery"></ul>
     </div>
-    <!-- 2026年1月17日一旦コメントアウト -->
-    <!-- <script src="demo/demo.js"></script> -->
+    <script src="demo/demo.js"></script>
     <script>
       var _gaq = _gaq || [];
       _gaq.push(["_setAccount", "UA-26520680-1"]);
@@ -70,25 +69,6 @@
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(ga, s);
       })();
-    </script>
-    <script>
-      // 2026年1月17日　FB投稿時URL後ろの長いパラメータでのエラー回避
-      // すでに demo.js で実行されている設定を「history: false」で上書きします
-      $(function () {
-        // HTMLの準備が整ってから実行する（jQueryのお作法）
-        $("#gallery").photobox(
-          "a",
-          {
-            zoomable: true,
-            history: false, // URLのパラメータを無視してギャラリーを動かす設定
-          },
-          imageLoaded
-        );
-
-        function imageLoaded() {
-          console.log("image has been loaded...");
-        }
-      });
     </script>
   </body>
 </html>
